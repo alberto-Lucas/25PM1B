@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrimeiroApp.MainPage"
+             BackgroundColor="Blue">
+    <StackLayout Padding="30">
+        <Label Text="Olá Mundo"/>
+
+        <Label Text="Teste1"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Teste2"
+               HorizontalOptions="End"/>
+
+        <Label Text="Teste3"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="Teste4"/>
+
+        <Entry Placeholder="Texto aqui"
+               x:Name="txtAqui"
+               TextTransform="Uppercase"
+               IsPassowrd="true"
+               Keyboard="Chat"/>
+
+
+    </StackLayout>
+</ContentPage>
