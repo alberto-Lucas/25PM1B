@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TelaLogin.MainPage">
+    <StackLayout  Padding="20" 
+                  VerticalOptions="Center">
+        <Frame CornerRadius="10"
+               BackgroundColor="Black">
+            <StackLayout>
+                <Label Text="Login"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"/>
+
+                <StackLayout>
+                    <Label Text="Usuário:"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtUsuario" 
+                           Placeholder="Usuário"/>
+                    <!-- Comentario -->
+                    <Label Text="Senha:"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtSenha" 
+                           Placeholder="Senha"
+                           IsPassword="True"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="cbxMostrarSenha"
+                                  Color="Blue"
+                                  CheckedChanged="cbxMostrarSenha_CheckedChanged"/>
+                        <Label Text="Mostrar Senha"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="tapMostrarSenha_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+                    <Button Text="Entrar"
+                            x:Name="btnEntrar"
+                            Clicked="btnEntrar_Clicked"
+                            Margin="0,20,0,0"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
