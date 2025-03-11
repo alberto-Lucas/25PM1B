@@ -10,9 +10,17 @@
         private void btnEntrar_Clicked(object sender, EventArgs e)
         {
             if (ValidarUsuario(txtUsuario.Text, txtSenha.Text))
+            {
+                //Recuperar a instancia da classe singleton
+                var usuarioLogado = UsuarioLogado.Instancia;
+                //atribuir valores aos atributos da
+                //classe singleton
+                usuarioLogado.Login = txtUsuario.Text;
+
                 Application.Current.
                     MainPage.Navigation.
                     PushAsync(new pgPrincipal());
+            }
             else
                 DisplayAlert("Atenção!",
                             "Usuário ou Senha inválido.",
@@ -40,6 +48,11 @@
         private void MostrarSenha()
         {
             txtSenha.IsPassword = !cbxMostrarSenha.IsChecked;
+        }
+
+        private void tapCadastrar_Tapped(object sender, TappedEventArgs e)
+        {
+            DisplayAlert("Informação", "Em Breve...", "Ok");
         }
     }
 }

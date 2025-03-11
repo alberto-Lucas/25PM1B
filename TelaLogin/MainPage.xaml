@@ -40,6 +40,20 @@
                             x:Name="btnEntrar"
                             Clicked="btnEntrar_Clicked"
                             Margin="0,20,0,0"/>
+
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Não possui uma conta?"/>
+                                <Span Text="Cadastra-se"
+                                      FontAttributes="Bold"
+                                      TextDecorations="Underline"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapCadastrar_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </Frame>
