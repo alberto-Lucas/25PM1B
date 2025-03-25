@@ -30,7 +30,8 @@
         private bool ValidarUsuario(
             string usuario, string senha)
         {
-            return (usuario == "admin" && senha == "admin");
+            var user = UsuarioLogado.Instancia;
+            return (usuario == user.Login && senha == user.Senha);
         }
 
         private void cbxMostrarSenha_CheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -52,7 +53,8 @@
 
         private void tapCadastrar_Tapped(object sender, TappedEventArgs e)
         {
-            DisplayAlert("Informação", "Em Breve...", "Ok");
+            Application.Current.MainPage.
+                Navigation.PushAsync(new pgRegistro());
         }
     }
 }

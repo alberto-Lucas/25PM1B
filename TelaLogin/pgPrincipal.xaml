@@ -3,11 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TelaLogin.pgPrincipal"
              Title="pgPrincipal">
-    <StackLayout>
+    <StackLayout Padding="20">
         <Button x:Name="btnVoltar"
                 Text="Voltar"
                 Clicked="btnVoltar_Clicked"/>
 
+        <Frame>
+            <StackLayout>
+                <Label x:Name="lblLogin"/>
+                <Label x:Name="lblSenha"/>
+                <Label x:Name="lblNome"/>
+                <Label x:Name="lblEmail"/>
+                <Label x:Name="lblIdade"/>
+            </StackLayout>
+        </Frame>
         <Label x:Name="txtUsuarioLogado"/>
+
+        <Button Text="Cadastro Carro"
+                Clicked="btnCadCarro_Clicked"/>
+        <Button Text="Visualizar Carro"
+        Clicked="btnVisCarro_Clicked"/>
     </StackLayout>
 </ContentPage>

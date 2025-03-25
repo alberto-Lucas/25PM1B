@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TelaLogin.pgCadCarro"
+             Title="pgCadCarro">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Frame CornerRadius="10"
+                   BackgroundColor="#212121">
+                <StackLayout>
+                    <Label Text="Carro"
+                           FontSize="30"/>
+
+                    <Label Text="Marca"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtMarca"
+                           Placeholder="Marca"/>
+
+                    <Label Text="Modelo"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtModelo"
+                           Placeholder="Modelo"/>
+
+                    <Label Text="AnoFabricacao"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtAnoFabricacao"
+                           Placeholder="AnoFabricacao"/>
+
+                    <Label Text="AnoModelo"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtAnoModelo"
+                           Placeholder="AnoModelo"/>
+
+                    <Label Text="Cor"
+                           Margin="0,20,0,0"/>
+                    <Entry x:Name="txtCor"
+                           Placeholder="Cor"/>
+
+                    <Button Text="Salvar"
+                            BackgroundColor="Blue"
+                            Margin="0,20,0,0"
+                            Clicked="btnSalvar_Clicked"/>
+                </StackLayout>                
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

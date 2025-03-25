@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TelaLogin.pgVisCarro"
+             Title="pgVisCarro">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Frame BackgroundColor="#212121"
+                   CornerRadius="20">
+                <StackLayout>
+                    <Label x:Name="lblMarca"/>
+                    <Label x:Name="lblModelo"/>
+                    <Label x:Name="lblAnoFabricacao"/>
+                    <Label x:Name="lblAnoModelo"/>
+                    <Label x:Name="lblCor"/>
+                    <Label x:Name="lblLogin"/>
+                    <Label x:Name="lblDtCadastro"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
