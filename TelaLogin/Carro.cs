@@ -28,5 +28,6 @@ namespace TelaLogin
         public string Cor { get; set; }
         public string Login { get; set; }
         public string DtCadastro { get; set; }
+        public string DiretorioImagem { get; set; }
     }
 }

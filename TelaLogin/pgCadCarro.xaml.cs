@@ -22,5 +22,31 @@ public partial class pgCadCarro : ContentPage
 		//do dispositivo
 		carro.DtCadastro = 
 			DateTime.Now.ToShortDateString();
+
+		carro.DiretorioImagem = DirImagem;
+    }
+
+	//Variavel Global para armazenar
+	//o diretorio da imagem
+	string DirImagem;
+    private async void btnAddImagem_Clicked(object sender, EventArgs e)
+    {
+		//Variavel para armazenar
+		//a imagem selecionada;
+
+		//Utilizar o componente padrao
+		//de seleção de imagem
+		var imagemSelecionada =
+			await MediaPicker.PickPhotoAsync();
+
+		//validar se uma imagem foi selecionada
+		if(imagemSelecionada != null)
+		{
+			//Recupero o diretorio da
+			//imagem selecioanda
+			DirImagem = imagemSelecionada.FullPath;
+			imgCarro.Source = DirImagem;
+        }
+
     }
 }

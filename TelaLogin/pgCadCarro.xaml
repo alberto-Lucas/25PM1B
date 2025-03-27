@@ -36,6 +36,13 @@
                     <Entry x:Name="txtCor"
                            Placeholder="Cor"/>
 
+                    <Image Source="icon_car.png"
+                           HeightRequest="100"
+                           x:Name="imgCarro"/>
+
+                    <Button Text="Adicionar Imagem"
+                            Clicked="btnAddImagem_Clicked"/>
+
                     <Button Text="Salvar"
                             BackgroundColor="Blue"
                             Margin="0,20,0,0"

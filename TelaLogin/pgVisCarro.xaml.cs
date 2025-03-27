@@ -15,5 +15,6 @@ public partial class pgVisCarro : ContentPage
 		lblCor.Text = carro.Cor;
 		lblLogin.Text = carro.Login;
 		lblDtCadastro.Text = carro.DtCadastro;
+		imgCarro.Source = carro.DiretorioImagem;
 	}
 }
