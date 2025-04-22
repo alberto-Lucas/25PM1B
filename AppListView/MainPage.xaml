@@ -28,7 +28,11 @@
                                 <Label Text="{Binding Nome}"
                                        FontAttributes="Bold"
                                        FontSize="20"/>
-                                <Label Text="{Binding Idade}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Idade: "/>
+                                    <Label Text="{Binding Idade}"
+                                           Margin="5, 0"/>   
+                                </StackLayout>                                
                             </StackLayout>
                         </Frame>
                     </ViewCell>

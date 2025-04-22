@@ -45,7 +45,34 @@ namespace AppListView
 
         private void btnAdicionar_Clicked(object sender, EventArgs e)
         {
+            string nome = txtNome.Text;
+            string idade = txtIdade.Text;
 
+            //Validar os registro
+            if(string.IsNullOrEmpty(nome) || 
+                string.IsNullOrEmpty(idade))
+            {
+                //Se um dos dois estiver vazio
+                //apresento mensagem para o usuario
+                DisplayAlert("Atenção",
+                    "Por favor, preencha o nome "+
+                    "e a idade corretamente", "OK");
+                return; //para PARAR a excução
+            }
+
+            //Se chegou até aqui, é pq esta tudo certo
+            //Agora podemos popular a nossa coleção
+
+            pessoas.Add(
+                new Pessoa
+                {
+                    Nome = nome,
+                    Idade = idade
+                });
+
+            //por ultimo limpamos os campos
+            txtNome.Text = "";
+            txtIdade.Text = "";
         }
     }
 }
