@@ -25,6 +25,7 @@
                                Margin="5"
                                BackgroundColor="#414142">
                             <StackLayout>
+                                <Label Text="{Binding Id}"/>
                                 <Label Text="{Binding Nome}"
                                        FontAttributes="Bold"
                                        FontSize="20"/>
