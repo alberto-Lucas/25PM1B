@@ -8,8 +8,13 @@
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+        {   
+            var window = new Window(new AppShell());
+
+            window.Height = 800; //Altura
+            window.Width = 400;  //Largura
+
+            return window;
         }
     }
 }
