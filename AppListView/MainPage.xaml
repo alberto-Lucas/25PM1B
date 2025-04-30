@@ -16,7 +16,8 @@
                     Text="Adicionar"
                     Clicked="btnAdicionar_Clicked"/>
         </StackLayout>
-        <ListView x:Name="lsvLista">
+        <ListView x:Name="lsvLista"
+                  ItemTapped="lsvLista_Tapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -33,7 +34,10 @@
                                     <Label Text="Idade: "/>
                                     <Label Text="{Binding Idade}"
                                            Margin="5, 0"/>   
-                                </StackLayout>                                
+                                </StackLayout>
+                                <Button Text="Deletar"
+                                        Clicked="btnDeletar_Clicked"
+                                        CommandParameter="{Binding .}"/>
                             </StackLayout>
                         </Frame>
                     </ViewCell>

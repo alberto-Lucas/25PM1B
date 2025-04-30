@@ -167,5 +167,77 @@ namespace AppListView
             txtNome.Text = "";
             txtIdade.Text = "";
         }
+
+        private void lsvLista_Tapped(object sender, ItemTappedEventArgs e)
+        {
+            //Validar se o item da Lista é do Pessoa
+            //Extrar o objeto do item selecionado
+            //O item selecionado será o e do parametro
+            //Extra o item do e
+            //e.Item
+            //comparar o item com o objeto
+            //is = é
+            //atribuir o obejto Pessoa a variavel pessoa
+            if(e.Item is Pessoa pessoa)
+            {
+                //Criar uma variavel com o
+                //detalhes do registro
+                string itemSelecionado =
+                    "Resgitro: " + pessoa.Id.ToString() +
+                    Environment.NewLine +
+                    "Nome: " + pessoa.Nome +
+                    Environment.NewLine +
+                    "Idade: " + pessoa.Idade;
+
+                DisplayAlert("Detalhes da Pessoa",
+                    itemSelecionado, "OK");
+            }
+
+            //Limpar a seleção do item
+            //Preciso informar o tipo do componente
+            //q sera o sender para acessar as
+            //propriedade de limpeza
+            //((ListView)sender) = lsvLista
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        private async void btnDeletar_Clicked(object sender, EventArgs e)
+        {
+            //Nesse ponto iremos seguir a logica
+            //semelhante ao selecionar o registro
+            //como o botão deletar esta dentro do item
+            //e o mesmo ja possui o evento tapped
+            //isso pode gerar conflito no reconhecimento
+            //de toque, então precisamos identificar
+            //que o toque está sentod realizado no button
+            //e recuperamos o registro através do parametro
+            //o tal do ponto .
+            if(sender is Button button &&
+                button.CommandParameter is Pessoa pessoa)
+            {
+                //Se chegou até aqui 
+                //o item selecionado é valido
+
+                //Precisamos da confirmação do usuario
+                //antes de excluir o registro
+
+                //Nosso displayalert, quando utilizo a opção
+                //Sim ou Não
+                //o retorno Defautl TRUE é do primeiro botão
+                //portanto o primeiro deve ser o SIM
+                bool validacao =
+                    await DisplayAlert(
+                        "Confirmação",
+                        "Deseja realmente excluir este item?",
+                        "Sim",
+                        "Não");
+
+                if(validacao)
+                {
+                    conexao.Delete(pessoa);
+                    AtualizarListView();
+                }
+            }
+        }
     }
 }
