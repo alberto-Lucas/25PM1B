@@ -4,17 +4,15 @@
              x:Class="AppListView.MainPage">
     <StackLayout>
         <StackLayout Padding="10">
-            <Label Text="Nome:"/>
-            <Entry x:Name="txtNome"
-                   ClearButtonVisibility="WhileEditing"/>
-
-            <Label Text="Idade:"/>
-            <Entry x:Name="txtIdade"
-                   ClearButtonVisibility="WhileEditing"/>
-
-            <Button x:Name="btnAdicionar"
-                    Text="Adicionar"
-                    Clicked="btnAdicionar_Clicked"/>
+            <Button Text="Cadastrar"
+                    Clicked="btnCadastrar_Clicked"
+                    BackgroundColor="#333333"
+                    FontSize="20"/>
+            <Button Text="Atualizar"
+                    Clicked="btnAtualizar_Clicked"
+                    BackgroundColor="#333333"
+                    FontSize="20"
+                    Margin="0, 5"/>
         </StackLayout>
         <ListView x:Name="lsvLista"
                   ItemTapped="lsvLista_Tapped">

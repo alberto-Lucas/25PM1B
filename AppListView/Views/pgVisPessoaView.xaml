@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppListView.Views.pgVisPessoaView"
+             Title="pgVisPessoaView">
+    <StackLayout Padding="10">
+        <Button Text="Voltar"
+                Clicked="btnVoltar_Clicked"
+                BackgroundColor="#333333"
+                FontSize="20"/>
+
+        <StackLayout>
+            <Label Text="Id:"/>
+            <Label x:Name="lblId" FontSize="20"/>
+            <Label Text="Nome:"/>
+            <Label x:Name="lblNome" FontSize="20"/>
+            <Label Text="Idade:"/>
+            <Label x:Name="lblIdade" FontSize="20"/>            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
