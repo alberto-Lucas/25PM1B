@@ -87,5 +87,60 @@ namespace AppListView
         {
             AtualizarListView();
         }
+
+        private void tapVisualizar_Tapped(object sender, TappedEventArgs e)
+        {
+            //Precisamos recupear o evento tap
+            //precionado
+            //a varivael tapped, ira receber
+            //o conteudo de e q é o evento em si
+            TappedEventArgs tapped = 
+                (TappedEventArgs)e;
+            //Atraves do conteudo do e
+            //acesso o registro selecionado
+            //q foi passado via parametro
+            //Valido se o registro do parametro
+            //é do tipo Pessoa, se for atribuo
+            //a variavel registro
+            if(tapped.Parameter is Pessoa registro)
+            {
+                //Podemos chamar a tela de visualização
+                //passando o registro via parametro
+                Application.Current.MainPage.
+                    Navigation.PushAsync(
+                        new pgVisPessoaView(registro));
+            }
+        }
+
+        private async void tapDeletar_Tapped(object sender, TappedEventArgs e)
+        {
+            //Iremos seguir a ideia da
+            //rotina de visualizar
+            //Recuperar o evento tapped
+            //e validar o parametro
+            TappedEventArgs tapped = 
+                (TappedEventArgs)e;
+
+            if(tapped.Parameter is Pessoa registro)
+            {
+                //Precisa da confirmação do usuario
+                //para exclusão do registro
+                bool validacao =
+                    await DisplayAlert(
+                        "Confirmação",
+                        "Deseja realmente excluir o registro?",
+                        "Sim", "Não");
+
+                if(validacao)
+                {
+                    //Iremos chamar a rotina de exclusão
+                    //da camada controller
+                    //e após excluir o registro iremos
+                    //atualizar a lista
+                    pessoaController.Delete(registro);
+                    AtualizarListView();
+                }
+            }
+        }
     }
 }
