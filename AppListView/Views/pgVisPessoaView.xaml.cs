@@ -26,7 +26,9 @@ public partial class pgVisPessoaView : ContentPage
 		lblId.Text = pessoaVisualizar.Id.ToString();
 		lblNome.Text = pessoaVisualizar.Nome;
 		lblIdade.Text = pessoaVisualizar.Idade;
-	}
+		imgCadastro.Source = 
+			pessoaVisualizar.DirImagem;
+    }
 
     private async void btnVoltar_Clicked(object sender, EventArgs e)
     {

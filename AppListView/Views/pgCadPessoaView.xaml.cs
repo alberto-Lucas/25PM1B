@@ -1,5 +1,6 @@
 using AppListView.Controllers;
 using AppListView.Models;
+using AppListView.Services;
 
 namespace AppListView.Views;
 
@@ -56,6 +57,13 @@ public partial class pgCadPessoaView : ContentPage
         pessoa.Nome = nome;
         pessoa.Idade = idade;
 
+        //Antes de salvar o cadastro
+        //Precisamos fazer a opia da imagem
+        //e recuperar o diretorio da nova imagem
+        pessoa.DirImagem =
+            ImageService.
+                CopiarImagemDirApp(sImagemSelecionada);
+
         //Agora iremos inserir no BD
         if (pessoaController.Insert(pessoa))
         {
@@ -68,6 +76,7 @@ public partial class pgCadPessoaView : ContentPage
             //Limpo os campos
             txtNome.Text = "";
             txtIdade.Text = "";
+            RemoverImagem();
         }
         else
             DisplayAlert(
@@ -75,5 +84,37 @@ public partial class pgCadPessoaView : ContentPage
                 "Falha ao salvar o registro " +
                 "no banco de dados",
                 "OK");
+    }
+
+    //Precisamos criar uma variavel global
+    //que ira armazenar o diretorio da imagem
+    //selecioanda
+    string sImagemSelecionada;
+    private async void btnSelecionar_Clicked(object sender, EventArgs e)
+    {
+        //Irmeos chamar a nossa rotina de
+        //selação dde imagem da cama de serviço
+        sImagemSelecionada =
+            await ImageService.SelecionarImagem();
+
+        //Apresentar a imagem selecionara
+        //para o usuario
+        imgCadastro.Source = sImagemSelecionada;
+
+        //Exibimos o botão remover
+        btnRemover.IsVisible = true;
+    }
+
+    //Método para limpar a imagem da tela
+    private void RemoverImagem()
+    {
+        //Limpar a imagem do componente Image
+        imgCadastro.Source = "";
+        //Ocultamos o botão remover
+        btnRemover.IsVisible = false;
+    }
+    private void btnRemover_Clicked(object sender, EventArgs e)
+    {
+        RemoverImagem();
     }
 }

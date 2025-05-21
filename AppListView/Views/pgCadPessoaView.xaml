@@ -18,6 +18,20 @@
             <Entry x:Name="txtIdade"
                    ClearButtonVisibility="WhileEditing"/>
 
+            <Button Text="Selecionar Imagem"
+                    Clicked="btnSelecionar_Clicked"/>
+
+            <Button Text="Remover Imagem"
+                    Clicked="btnRemover_Clicked"
+                    IsVisible="false"
+                    x:Name="btnRemover"/>
+
+            <Image x:Name="imgCadastro"
+                   MaximumHeightRequest="300"
+                   MaximumWidthRequest="300"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
             <Button Text="Adicionar"
                     Clicked="btnAdicionar_Clicked"
                     BackgroundColor="#333333"

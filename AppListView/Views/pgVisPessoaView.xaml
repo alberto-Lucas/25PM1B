@@ -15,7 +15,13 @@
             <Label Text="Nome:"/>
             <Label x:Name="lblNome" FontSize="20"/>
             <Label Text="Idade:"/>
-            <Label x:Name="lblIdade" FontSize="20"/>            
+            <Label x:Name="lblIdade" FontSize="20"/>
+
+            <Image x:Name="imgCadastro"
+                   MaximumHeightRequest="300"
+                   MaximumWidthRequest="300"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
