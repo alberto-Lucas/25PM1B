@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppMenuShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppMenuShell"
+    Shell.FlyoutBehavior="Flyout"
+    Title="AppMenuShell"
+    xmlns:Views="clr-namespace:AppMenuShell.Views"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <Shell.FlyoutHeader>
+        <StackLayout BackgroundColor="Gray">
+            <Image Source="dotnet_bot.png"
+                   HeightRequest="200"/>
+            <Label Text="lucas@gmail.com"
+                   Margin="10, 0 , 0, 10"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+        <FlyoutItem 
+            FlyoutDisplayOptions="AsMultipleItems">
+
+            <ShellContent Title="Princial"
+                          Icon="icon.png"
+                          ContentTemplate=
+                          "{DataTemplate Views:pgPrincipal}"/>
+
+            <ShellContent Title="Sobre"
+                          Icon="icon.png"
+                          ContentTemplate=
+                          "{DataTemplate Views:pgSobre}"/>
+        </FlyoutItem>
+    
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Label Text="Versão: 1.0.0.0"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>
